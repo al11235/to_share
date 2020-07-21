@@ -21,6 +21,7 @@ FROM
 		  ) AS B
 ) AS C;
 -- -------------------------------------------------------------------------------------------------------------   
+-- Problem 2
 -- steps-
 -- 1- I calculated monthly revenue based on channel for every month in 2017
 -- 2- Used the window function to get cumulative revenue channel wise for each month
@@ -70,7 +71,7 @@ FROM (
 GROUP BY UGC_ID, CURRENT_YEAR, QUARTER
 )
 
-SELECT CURRENT_YEAR,
+SELECT CURRENT_YEAR,QUARTER,
        COUNT(QUARTER_PLUS_1)/COUNT(QUARTER),
        COUNT(QUARTER_PLUS_2)/COUNT(QUARTER),
 	   COUNT(QUARTER_PLUS_3)/COUNT(QUARTER)
